@@ -1,0 +1,12 @@
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\netstandard2.0\Trivia.Launcher.deps.json
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\netstandard2.0\Trivia.Launcher.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\netstandard2.0\Trivia.Launcher.pdb
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\netstandard2.0\Trivia.Domain.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\netstandard2.0\Trivia.Domain.pdb
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\netstandard2.0\Trivia.Launcher.csprojAssemblyReference.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\netstandard2.0\Trivia.Launcher.AssemblyInfoInputs.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\netstandard2.0\Trivia.Launcher.AssemblyInfo.cs
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\netstandard2.0\Trivia.Launcher.csproj.CoreCompileInputs.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\netstandard2.0\Trivia.Launcher.csproj.CopyComplete
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\netstandard2.0\Trivia.Launcher.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\netstandard2.0\Trivia.Launcher.pdb

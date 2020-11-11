@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia", "Trivia\Trivia.csproj", "{16408F61-A579-4006-8744-85F5B750D89C}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia.Domain", "Trivia.Domain\Trivia.Domain.csproj", "{445F4B5F-3C98-4D6E-A7E0-04295A6D2D36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia.Launcher", "Trivia.Launcher\Trivia.Launcher.csproj", "{65B2D131-2853-420C-861E-51C85B3E1E71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{16408F61-A579-4006-8744-85F5B750D89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16408F61-A579-4006-8744-85F5B750D89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16408F61-A579-4006-8744-85F5B750D89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16408F61-A579-4006-8744-85F5B750D89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{445F4B5F-3C98-4D6E-A7E0-04295A6D2D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{445F4B5F-3C98-4D6E-A7E0-04295A6D2D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{445F4B5F-3C98-4D6E-A7E0-04295A6D2D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{445F4B5F-3C98-4D6E-A7E0-04295A6D2D36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B2D131-2853-420C-861E-51C85B3E1E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B2D131-2853-420C-861E-51C85B3E1E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B2D131-2853-420C-861E-51C85B3E1E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B2D131-2853-420C-861E-51C85B3E1E71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D959987D-6D77-46B9-BC58-2C8AA4C22087}
 	EndGlobalSection
 EndGlobal

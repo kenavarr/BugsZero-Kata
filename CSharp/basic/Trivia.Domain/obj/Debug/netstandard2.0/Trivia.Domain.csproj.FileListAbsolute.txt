@@ -1,0 +1,8 @@
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\bin\Debug\netstandard2.0\Trivia.Domain.deps.json
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\bin\Debug\netstandard2.0\Trivia.Domain.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\bin\Debug\netstandard2.0\Trivia.Domain.pdb
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\obj\Debug\netstandard2.0\Trivia.Domain.AssemblyInfoInputs.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\obj\Debug\netstandard2.0\Trivia.Domain.AssemblyInfo.cs
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\obj\Debug\netstandard2.0\Trivia.Domain.csproj.CoreCompileInputs.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\obj\Debug\netstandard2.0\Trivia.Domain.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\obj\Debug\netstandard2.0\Trivia.Domain.pdb
