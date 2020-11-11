@@ -1,0 +1,14 @@
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\net472\Trivia.Launcher.exe.config
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\net472\Trivia.Launcher.exe
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\net472\Trivia.Launcher.pdb
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\net472\Trivia.Domain.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\net472\Trivia.Flow.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\net472\Trivia.Domain.pdb
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\bin\Debug\net472\Trivia.Flow.pdb
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\net472\Trivia.Launcher.csprojAssemblyReference.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\net472\Trivia.Launcher.AssemblyInfoInputs.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\net472\Trivia.Launcher.AssemblyInfo.cs
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\net472\Trivia.Launcher.csproj.CoreCompileInputs.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\net472\Trivia.Launcher.csproj.CopyComplete
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\net472\Trivia.Launcher.exe
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Launcher\obj\Debug\net472\Trivia.Launcher.pdb

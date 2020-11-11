@@ -1,0 +1,12 @@
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\obj\Debug\netstandard2.0\Trivia.Flow.csprojAssemblyReference.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\obj\Debug\netstandard2.0\Trivia.Flow.AssemblyInfoInputs.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\obj\Debug\netstandard2.0\Trivia.Flow.AssemblyInfo.cs
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\obj\Debug\netstandard2.0\Trivia.Flow.csproj.CoreCompileInputs.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\bin\Debug\netstandard2.0\Trivia.Flow.deps.json
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\bin\Debug\netstandard2.0\Trivia.Flow.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\bin\Debug\netstandard2.0\Trivia.Flow.pdb
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\bin\Debug\netstandard2.0\Trivia.Domain.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\bin\Debug\netstandard2.0\Trivia.Domain.pdb
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\obj\Debug\netstandard2.0\Trivia.Flow.csproj.CopyComplete
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\obj\Debug\netstandard2.0\Trivia.Flow.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Flow\obj\Debug\netstandard2.0\Trivia.Flow.pdb

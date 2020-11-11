@@ -6,7 +6,7 @@ namespace Trivia.Domain.Games
 {
 	public class NewGame : IGame
 	{
-		public List<Player> Players { get; }
+		public List<NewPlayer> Players { get; } = new List<NewPlayer>();
 
 		public List<IQuestion> Questions { get; }
 

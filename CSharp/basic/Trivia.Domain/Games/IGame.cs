@@ -6,7 +6,7 @@ namespace Trivia.Domain.Games
 {
 	public interface IGame
 	{
-		List<Player> Players { get; }
+		List<NewPlayer> Players { get; }
 		List<IQuestion> Questions { get; }
 	}
 }

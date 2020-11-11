@@ -1,14 +1,13 @@
-﻿namespace Trivia.Domain.Players
+﻿using Trivia.Domain.Players.Events;
+
+namespace Trivia.Domain.Players
 {
-	public class Player
+	public static class Player
 	{
-		public string Name { get; }
-
-		private Player(string name)
+		public static void Create(string nickname)
 		{
-			Name = name;
+			NewPlayer newPlayer = NewPlayer.Create(nickname);
+			PlayerEvent.Raise(new PlayerCreated(newPlayer));
 		}
-
-		public static Player Create(string nickname) => new Player(nickname);
 	}
 }

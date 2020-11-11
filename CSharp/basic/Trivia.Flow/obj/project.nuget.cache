@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NwuTis4F8rkBLHZxkAM9P2aZbhp/fCawrpgP/oCO+V0gtiL0dG3YaIvREnuCsKQrv8KrB47aPg0f9WQ43fOR2w==",
+  "success": true,
+  "projectFilePath": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia.Flow\\Trivia.Flow.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\knavarro\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\knavarro\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

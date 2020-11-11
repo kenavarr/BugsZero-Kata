@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia.Domain", "Trivia.Domain\Trivia.Domain.csproj", "{445F4B5F-3C98-4D6E-A7E0-04295A6D2D36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trivia.Domain", "Trivia.Domain\Trivia.Domain.csproj", "{445F4B5F-3C98-4D6E-A7E0-04295A6D2D36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia.Launcher", "Trivia.Launcher\Trivia.Launcher.csproj", "{65B2D131-2853-420C-861E-51C85B3E1E71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trivia.Launcher", "Trivia.Launcher\Trivia.Launcher.csproj", "{65B2D131-2853-420C-861E-51C85B3E1E71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia.Flow", "Trivia.Flow\Trivia.Flow.csproj", "{914047DC-F287-45F6-9331-52EDB1BFC897}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{65B2D131-2853-420C-861E-51C85B3E1E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65B2D131-2853-420C-861E-51C85B3E1E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65B2D131-2853-420C-861E-51C85B3E1E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{914047DC-F287-45F6-9331-52EDB1BFC897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{914047DC-F287-45F6-9331-52EDB1BFC897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{914047DC-F287-45F6-9331-52EDB1BFC897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{914047DC-F287-45F6-9331-52EDB1BFC897}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

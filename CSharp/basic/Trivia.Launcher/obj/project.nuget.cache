@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DftiFrTn24Psimplpu3zbaRIP810DrCVJ94w9QFrXV7HHIoCfZ8DW1O+yEb9874K8iazCNN8MEsQ50wwRUR9PA==",
+  "dgSpecHash": "fR9EzN4PtbBV2KK7kejg2NhIQJztOcGZz9WtDDvFj3NQdOBvw2qVMa8ICYNCqM14A3JuwZEY0/NsEHHxOi5Lug==",
   "success": true,
   "projectFilePath": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia.Launcher\\Trivia.Launcher.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\knavarro\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\knavarro\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
