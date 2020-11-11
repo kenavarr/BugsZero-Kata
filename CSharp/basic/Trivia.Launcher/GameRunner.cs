@@ -1,6 +1,7 @@
 ﻿using System;
 using Trivia.Domain.Games;
 using Trivia.Domain.Players;
+using Trivia.Domain.Questions;
 
 namespace Trivia.Launcher
 {
@@ -10,11 +11,12 @@ namespace Trivia.Launcher
 
         public static void Main(String[] args)
         {
-            // Création du jeu et ajout des joueurs
+            // Initialisation du jeux
             IGame game = Game.Create()
                 .AddPlayer(Player.Create("Chet"))
                 .AddPlayer(Player.Create("Pat"))
-                .AddPlayer(Player.Create("Sue"));
+                .AddPlayer(Player.Create("Sue"))
+                .AddDeck(Deck.OpenNewQuestionsDeck());
 
             OldGame aGame = new OldGame();
 

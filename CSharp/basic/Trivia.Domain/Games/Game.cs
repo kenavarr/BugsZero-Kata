@@ -1,4 +1,6 @@
-﻿using Trivia.Domain.Players;
+﻿using System.Collections.Generic;
+using Trivia.Domain.Players;
+using Trivia.Domain.Questions;
 
 namespace Trivia.Domain.Games
 {
@@ -20,6 +22,12 @@ namespace Trivia.Domain.Games
 				newGame.Players.Remove(player);
 
 			return newGame;
+		}
+
+		public static IGame AddDeck(this IGame game, IEnumerable<IQuestion> questions)
+		{
+			game.Questions.AddRange(questions);
+			return game;
 		}
 	}
 }
