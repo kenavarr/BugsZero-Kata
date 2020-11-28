@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\SpecflowTests\\SpecflowTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\SpecflowTests\\SpecflowTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\SpecflowTests\\SpecflowTests.csproj",
+        "projectName": "SpecflowTests",
+        "projectPath": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\SpecflowTests\\SpecflowTests.csproj",
+        "packagesPath": "C:\\Users\\knavarro\\.nuget\\packages\\",
+        "outputPath": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\SpecflowTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\knavarro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://elcia.pkgs.visualstudio.com/Stargate/_packaging/Stargate/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/elcia/_packaging/Cervelle/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/elcia/_packaging/ELCIA/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.3, )"
+            },
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "SpecFlow.MsTest": {
+              "target": "Package",
+              "version": "[3.5.5, )"
+            },
+            "SpecFlow.Plus.LivingDocPlugin": {
+              "target": "Package",
+              "version": "[3.4.243, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
