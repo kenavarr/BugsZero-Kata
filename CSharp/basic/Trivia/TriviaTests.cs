@@ -18,9 +18,9 @@ namespace Trivia
 
             Game aGame = new Game();
             Console.WriteLine(aGame.IsPlayable());
-            aGame.Add("Chet");
-            aGame.Add("Pat");
-            aGame.Add("Sue");
+            aGame.AddPlayer("Chet");
+            aGame.AddPlayer("Pat");
+            aGame.AddPlayer("Sue");
 
             aGame.Roll(1);
             aGame.Roll(1);

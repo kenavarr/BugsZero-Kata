@@ -11,27 +11,18 @@ namespace Trivia
         {
             Game aGame = new Game();
 
-            aGame.Add("Chet");
-            aGame.Add("Pat");
-            aGame.Add("Sue");
+            aGame.AddPlayer("Chet");
+            aGame.AddPlayer("Pat");
+            aGame.AddPlayer("Sue");
 
             Random rand = new Random();
 
             do
             {
 
+                aGame.SwitchToNextplayer();
                 aGame.Roll(rand.Next(5) + 1);
-
-                if (rand.Next(9) == 7)
-                {
-                    notAWinner = aGame.WrongAnswer();
-                }
-                else
-                {
-                    notAWinner = aGame.WasCorrectlyAnswered();
-                }
-
-
+                notAWinner = aGame.Answer(rand.Next(9));
 
             } while (notAWinner);
 

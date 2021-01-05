@@ -1,0 +1,6 @@
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\bin\Debug\Trivia.Domain.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\bin\Debug\Trivia.Domain.pdb
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\obj\Debug\Trivia.Domain.csprojAssemblyReference.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\obj\Debug\Trivia.Domain.csproj.CoreCompileInputs.cache
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\obj\Debug\Trivia.Domain.dll
+C:\Talks\T1\BaseCode\CSharp\basic\Trivia.Domain\obj\Debug\Trivia.Domain.pdb

@@ -33,7 +33,11 @@
         },
         "frameworks": {
           "net48": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia\\Trivia.csproj": {
+                "projectPath": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia\\Trivia.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -72,6 +76,35 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia.Domain\\Trivia.Domain.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia.Domain\\Trivia.Domain.csproj",
+        "projectName": "Trivia.Domain",
+        "projectPath": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia.Domain\\Trivia.Domain.csproj"
+      },
+      "frameworks": {
+        "net471": {}
+      }
+    },
+    "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia\\Trivia.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia\\Trivia.csproj",
+        "projectName": "Trivia",
+        "projectPath": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia\\Trivia.csproj",
+        "frameworks": {
+          "net471": {
+            "projectReferences": {
+              "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia.Domain\\Trivia.Domain.csproj": {
+                "projectPath": "C:\\Talks\\T1\\BaseCode\\CSharp\\basic\\Trivia.Domain\\Trivia.Domain.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net471": {}
       }
     }
   }

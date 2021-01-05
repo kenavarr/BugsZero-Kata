@@ -30,4 +30,8 @@
     <Folder Include="Hooks\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Trivia\Trivia.csproj" />
+  </ItemGroup>
+
 </Project>
