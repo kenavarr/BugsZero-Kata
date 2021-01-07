@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using Trivia.Domain.Players;
+using Trivia.Domain.Players.Events;
 using Trivia.Domain.Status;
+using Trivia.Domain.Status.Events;
 
 namespace Trivia
 {
-	public class Game
+	public class Game : IDisposable
 	{
 		List<PlayerStatus> playersStatus = new List<PlayerStatus>();
 
@@ -19,10 +21,13 @@ namespace Trivia
 		LinkedList<string> rockQuestions = new LinkedList<string>();
 
 		int currentPlayer = -1;
-		bool isGettingOutOfPenaltyBox;
+		string currentPlayerName;
 
 		public Game()
 		{
+			PlayerEvents.OnPlayerTriggered += OnPlayerTriggered;
+			PlayerStatusEvents.OnPlayerStatusTriggered += OnPlayerStatusTriggered;
+
 			for (int i = 0; i < 50; i++)
 			{
 				popQuestions.AddLast("Pop Question " + i);
@@ -42,22 +47,9 @@ namespace Trivia
 			return (HowManyPlayers() >= 2);
 		}
 
-		public bool AddPlayer(String playerName)
+		public void AddPlayer(String playerName)
 		{
-			Player newPlayer = PlayerAggregate.Create(playerName);
-			playersStatus.Add(PlayerStatusAggregate.Init(newPlayer));
-
-			places[HowManyPlayers()] = 0;
-			purses[HowManyPlayers()] = 0;
-
-			Console.WriteLine(playerName + " was Added");
-			Console.WriteLine("They are player number " + playersStatus.Count);
-			return true;
-		}
-
-		public int HowManyPlayers()
-		{
-			return playersStatus.Count;
+			PlayerAggregate.Create(playerName);
 		}
 
 		public void Roll(int roll)
@@ -69,7 +61,7 @@ namespace Trivia
 			{
 				if (roll % 2 != 0)
 				{
-					isGettingOutOfPenaltyBox = true;
+					playersStatus[currentPlayer].Release();
 
 					Console.WriteLine(playersStatus[currentPlayer].Player.Name + " is getting out of the penalty box");
 					places[currentPlayer] = places[currentPlayer] + roll;
@@ -84,7 +76,6 @@ namespace Trivia
 				else
 				{
 					Console.WriteLine(playersStatus[currentPlayer].Player.Name + " is not getting out of the penalty box");
-					isGettingOutOfPenaltyBox = false;
 				}
 
 			}
@@ -101,6 +92,28 @@ namespace Trivia
 				AskQuestion();
 			}
 
+		}
+
+		public void Answer(int diceScore)
+		{
+			playersStatus[currentPlayer].Player.Answer(diceScore);
+		}
+
+		public bool DidPlayerWin()
+		{
+			return !(purses[currentPlayer] == 6);
+		}
+
+		public PlayerStatus GetCurrentPlayerStatus()
+		{
+			return playersStatus.Single(ps => ps.Player.Name == currentPlayerName);
+		}
+
+		public void SwitchToNextPlayer()
+		{
+			currentPlayer++;
+			if (currentPlayer == playersStatus.Count) currentPlayer = 0;
+			currentPlayerName = playersStatus[currentPlayer].Player.Name;
 		}
 
 		private void AskQuestion()
@@ -141,77 +154,88 @@ namespace Trivia
 			return "Rock";
 		}
 
-		public bool Answer(int diceScore)
+		private void OnPlayerTriggered(IPlayerEvent playerEvent)
 		{
-			if (playersStatus[currentPlayer].Player.Answer(diceScore))
-				return WasCorrectlyAnswered();
-			else
-				return WrongAnswer();
+			switch (playerEvent)
+			{
+				case PlayerAddedEvent playerAdded:
+					PlayerStatusAggregate.Init(playerAdded.Player);
+					return;
+				case PlayerAnswerdCorrectlyEvent playerAnswerdCorrectly:
+					WasCorrectlyAnswered(playerAnswerdCorrectly.Player);
+					return;
+				case PlayerAnswerdBadlyEvent playerAnswerdBadly:
+					WrongAnswer(playerAnswerdBadly.Player);
+					return;
+			}
 		}
 
-		public bool WasCorrectlyAnswered()
+		private void WasCorrectlyAnswered(Player player)
 		{
-			if (playersStatus[currentPlayer].IsPrisoner)
-			{
-				if (isGettingOutOfPenaltyBox)
-				{
-					playersStatus[currentPlayer] = playersStatus[currentPlayer].Release();
-					Console.WriteLine("Answer was correct!!!!");
-					purses[currentPlayer]++;
-					playersStatus[currentPlayer] = playersStatus[currentPlayer].IncreaseScore();
-					Console.WriteLine(playersStatus[currentPlayer].Player.Name
-							+ " now has "
-							+ purses[currentPlayer]
-							+ " Gold Coins.");
+			PlayerStatus playerStatus = playersStatus.Single(ps => ps.Player.Name == player.Name);
 
-					bool winner = DidPlayerWin();
-
-					return winner;
-				}
-				else
-				{
-					return true;
-				}
-			}
-			else
+			if (!playerStatus.IsPrisoner)
 			{
-				Console.WriteLine("Answer was corrent!!!!");
+
+				Console.WriteLine("Answer was correct!!!!");
 				purses[currentPlayer]++;
-				playersStatus[currentPlayer] = playersStatus[currentPlayer].IncreaseScore();
+				playerStatus.IncreaseScore();
 				Console.WriteLine(playersStatus[currentPlayer].Player.Name
 						+ " now has "
 						+ purses[currentPlayer]
 						+ " Gold Coins.");
-
-				bool winner = DidPlayerWin();
-
-				return winner;
 			}
 		}
 
-		public bool WrongAnswer()
+		private void WrongAnswer(Player player)
 		{
 			Console.WriteLine("Question was incorrectly answered");
-			playersStatus[currentPlayer] = playersStatus[currentPlayer].Imprison();
+			playersStatus.Single(ps => ps.Player.Name == player.Name).Imprison();
 			Console.WriteLine(playersStatus[currentPlayer].Player.Name + " was sent to the penalty box");
-
-			return true;
 		}
 
-		private bool DidPlayerWin()
+		private void OnPlayerStatusTriggered(IPlayerStatusEvent playerStatusEvent)
 		{
-			return !(purses[currentPlayer] == 6);
+			switch (playerStatusEvent)
+			{
+				case PlayerStatusCreatedEvent playerStatusCreated:
+					AddPlayerStatus(playerStatusCreated.PlayerStatus);
+					return;
+				case PlayerStatusImprisonnedEvent playerStatusImprisonned:
+				case PlayerStatusReleasedEvent playerStatusReleased:
+				case PlayerStatusIncreasedScoreEvent playerStatusIncreasedScore:
+					ChangePlayerStatus(playerStatusEvent.PlayerStatus);
+					return;
+			}
 		}
 
-		public PlayerStatus GetCurrentPlayerStatus()
+		private void AddPlayerStatus(PlayerStatus playerStatus)
 		{
-			return playersStatus[currentPlayer];
+			playersStatus.Add(playerStatus);
+
+			places[HowManyPlayers()] = 0;
+			purses[HowManyPlayers()] = 0;
+
+			Console.WriteLine(playerStatus.Player.Name + " was Added");
+			Console.WriteLine("They are player number " + playersStatus.Count);
 		}
 
-		public void SwitchToNextplayer()
+		private int HowManyPlayers()
 		{
-			currentPlayer++;
-			if (currentPlayer == playersStatus.Count) currentPlayer = 0;
+			return playersStatus.Count;
+		}
+
+		private void ChangePlayerStatus(PlayerStatus newplayerStatus)
+		{
+			var oldPlayerStatus = playersStatus.Single(ps => ps.Player.Name == newplayerStatus.Player.Name);
+			playersStatus.Remove(oldPlayerStatus);
+			playersStatus.Add(newplayerStatus);
+		}
+
+		public void Dispose()
+		{
+			PlayerEvents.OnPlayerTriggered -= OnPlayerTriggered;
+			PlayerStatusEvents.OnPlayerStatusTriggered -= OnPlayerStatusTriggered;
 		}
 	}
 

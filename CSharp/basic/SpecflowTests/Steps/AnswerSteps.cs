@@ -8,8 +8,6 @@ namespace SpecflowTests.Steps
 	[Binding]
     public class AnswerSteps
     {
-        private GameContext GameContext = new GameContext();
-
         [Given(@"Les joueurs de Trivia")]
         public void GivenLesJoueursDeTrivia(Table players)
         {
@@ -23,7 +21,7 @@ namespace SpecflowTests.Steps
         [Given(@"Un joueur doit répondre à une question")]
         public void GivenUnJoueurDoitRepondreAUneQuestion()
         {
-            GameContext.Game.SwitchToNextplayer();
+            GameContext.Game.SwitchToNextPlayer();
         }
 
         [When(@"Le joueur donne la bonne réponse")]

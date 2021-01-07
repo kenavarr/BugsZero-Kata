@@ -42,8 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Players\Events\IPlayerEvent.cs" />
+    <Compile Include="Players\Events\PlayerAddedEvent.cs" />
+    <Compile Include="Players\Events\PlayerAnswerdBadlyEvent.cs" />
+    <Compile Include="Players\Events\PlayerAnswerdCorrectlyEvent.cs" />
     <Compile Include="Players\Player.cs" />
     <Compile Include="Players\PlayerAggregate.cs" />
+    <Compile Include="Players\Events\PlayerEvents.cs" />
+    <Compile Include="Status\Events\IPlayerStatusEvent.cs" />
+    <Compile Include="Status\Events\PlayerStatusCreatedEvent.cs" />
+    <Compile Include="Status\Events\PlayerStatusEvents.cs" />
+    <Compile Include="Status\Events\PlayerStatusImprisonnedEvent.cs" />
+    <Compile Include="Status\Events\PlayerStatusIncreasedScoreEvent.cs" />
+    <Compile Include="Status\Events\PlayerStatusReleasedEvent.cs" />
     <Compile Include="Status\PlayerStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Status\PlayerStatusAggregate.cs" />

@@ -20,9 +20,10 @@ namespace Trivia
             do
             {
 
-                aGame.SwitchToNextplayer();
+                aGame.SwitchToNextPlayer();
                 aGame.Roll(rand.Next(5) + 1);
-                notAWinner = aGame.Answer(rand.Next(9));
+                aGame.Answer(rand.Next(9));
+                notAWinner = aGame.DidPlayerWin();
 
             } while (notAWinner);
 

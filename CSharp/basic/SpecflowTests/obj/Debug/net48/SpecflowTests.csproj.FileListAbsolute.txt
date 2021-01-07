@@ -27,10 +27,7 @@ C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\bin\Debug\net48\System.Threading
 C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\bin\Debug\net48\System.ValueTuple.dll
 C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\bin\Debug\net48\Utf8Json.dll
 C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\bin\Debug\net48\Trivia.exe
-C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\bin\Debug\net48\xunit.core.dll
-C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\bin\Debug\net48\Assent.dll
 C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\bin\Debug\net48\Trivia.pdb
-C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\bin\Debug\net48\xunit.core.xml
 C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\obj\Debug\net48\SpecflowTests.csprojAssemblyReference.cache
 C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\obj\Debug\net48\SpecflowTests.dll.config
 C:\Talks\T1\BaseCode\CSharp\basic\SpecflowTests\obj\Debug\net48\SpecflowTests.AssemblyInfoInputs.cache

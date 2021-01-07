@@ -9,9 +9,10 @@ Background:
 	| Chet |
 	| Pat  |
 	| Sue  |
-	Given Un joueur doit répondre à une question
+	And Un joueur doit répondre à une question
 
 Scenario: Un joueur donne la bonne réponse à une question
+	
 	When Le joueur donne la bonne réponse
 	Then Le joueur marque un point
 

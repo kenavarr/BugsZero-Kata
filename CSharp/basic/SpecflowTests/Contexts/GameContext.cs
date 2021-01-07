@@ -2,13 +2,8 @@
 
 namespace SpecflowTests.Contexts
 {
-	public class GameContext
+	public static class GameContext
 	{
-		public Game Game { get; }
-
-		public GameContext()
-		{
-			Game = new Game();
-		}
+		public static Game Game { get; set; }
 	}
 }
