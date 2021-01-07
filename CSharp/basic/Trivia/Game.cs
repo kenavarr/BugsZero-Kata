@@ -28,6 +28,8 @@ namespace Trivia
 			PlayerEvents.OnPlayerTriggered += OnPlayerTriggered;
 			PlayerStatusEvents.OnPlayerStatusTriggered += OnPlayerStatusTriggered;
 
+			PlayerStatusAggregate.InitAggregate();
+
 			for (int i = 0; i < 50; i++)
 			{
 				popQuestions.AddLast("Pop Question " + i);
@@ -158,9 +160,6 @@ namespace Trivia
 		{
 			switch (playerEvent)
 			{
-				case PlayerAddedEvent playerAdded:
-					PlayerStatusAggregate.Init(playerAdded.Player);
-					return;
 				case PlayerAnswerdCorrectlyEvent playerAnswerdCorrectly:
 					WasCorrectlyAnswered(playerAnswerdCorrectly.Player);
 					return;
@@ -236,6 +235,8 @@ namespace Trivia
 		{
 			PlayerEvents.OnPlayerTriggered -= OnPlayerTriggered;
 			PlayerStatusEvents.OnPlayerStatusTriggered -= OnPlayerStatusTriggered;
+
+			PlayerStatusAggregate.FinalizeAggregate();
 		}
 	}
 

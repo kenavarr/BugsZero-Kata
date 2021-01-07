@@ -1,13 +1,19 @@
 ﻿using Trivia.Domain.Players;
+using Trivia.Domain.Players.Events;
 using Trivia.Domain.Status.Events;
 
 namespace Trivia.Domain.Status
 {
 	public static class PlayerStatusAggregate
 	{
-		public static void Init(Player player)
+		public static void InitAggregate()
 		{
-			PlayerStatusEvents.RaiseEvent(new PlayerStatusCreatedEvent(new PlayerStatus(player, 0, false)));
+			PlayerEvents.OnPlayerTriggered += OnPlayerTriggered;
+		}
+
+		public static void FinalizeAggregate()
+		{
+			PlayerEvents.OnPlayerTriggered -= OnPlayerTriggered;
 		}
 
 		public static void Imprison(this PlayerStatus playerStatus)
@@ -23,6 +29,16 @@ namespace Trivia.Domain.Status
 		public static void IncreaseScore(this PlayerStatus playerStatus)
 		{
 			PlayerStatusEvents.RaiseEvent(new PlayerStatusIncreasedScoreEvent(new PlayerStatus(playerStatus.Player, playerStatus.Score + 1, playerStatus.IsPrisoner)));
+		}
+
+		private static void OnPlayerTriggered(IPlayerEvent playerEvent)
+		{
+			switch (playerEvent)
+			{
+				case PlayerAddedEvent playerAdded:
+					PlayerStatusEvents.RaiseEvent(new PlayerStatusCreatedEvent(new PlayerStatus(playerAdded.Player, 0, false)));
+					return;
+			}
 		}
 	}
 }
