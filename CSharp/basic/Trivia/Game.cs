@@ -27,6 +27,7 @@ namespace Trivia
 			PlayerEvents.OnPlayerTriggered += OnPlayerTriggered;
 			PlayerStatusEvents.OnPlayerStatusTriggered += OnPlayerStatusTriggered;
 
+			PlayerAggregate.InitAggregate();
 			PlayerStatusAggregate.InitAggregate();
 
 			for (int i = 0; i < 50; i++)
@@ -95,10 +96,10 @@ namespace Trivia
 
 		}
 
-		public void Answer(string playerName, int diceScore)
+		public void RollDiceToAnswer(string playerName)
 		{
 			if(currentPlayerStatus.Player.Name == playerName)
-				currentPlayerStatus.Player.Answer(diceScore);
+				currentPlayerStatus.Player.RollDiceToAnswer();
 		}
 
 		public bool PlayerWin(string playerName)
@@ -159,15 +160,15 @@ namespace Trivia
 			switch (playerEvent)
 			{
 				case PlayerAnswerdCorrectlyEvent playerAnswerdCorrectly:
-					WasCorrectlyAnswered(playerAnswerdCorrectly.Player);
+					PlayerCorrectlyAnswered(playerAnswerdCorrectly.Player);
 					return;
 				case PlayerAnswerdBadlyEvent playerAnswerdBadly:
-					WrongAnswer(playerAnswerdBadly.Player);
+					PlayerBadlyAnswered(playerAnswerdBadly.Player);
 					return;
 			}
 		}
 
-		private void WasCorrectlyAnswered(Player player)
+		private void PlayerCorrectlyAnswered(Player player)
 		{
 			PlayerStatus playerStatus = playersStatus.Single(ps => ps.Player.Name == player.Name);
 
@@ -183,7 +184,7 @@ namespace Trivia
 			}
 		}
 
-		private void WrongAnswer(Player player)
+		private void PlayerBadlyAnswered(Player player)
 		{
 			Console.WriteLine("Question was incorrectly answered");
 			playersStatus.Single(ps => ps.Player.Name == player.Name).Imprison();
@@ -234,6 +235,7 @@ namespace Trivia
 			PlayerEvents.OnPlayerTriggered -= OnPlayerTriggered;
 			PlayerStatusEvents.OnPlayerStatusTriggered -= OnPlayerStatusTriggered;
 
+			PlayerAggregate.FinalizeAggregate();
 			PlayerStatusAggregate.FinalizeAggregate();
 		}
 	}

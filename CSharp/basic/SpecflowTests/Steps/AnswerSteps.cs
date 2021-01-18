@@ -1,19 +1,21 @@
 ﻿using FluentAssertions;
 using SpecflowTests.Contexts;
 using TechTalk.SpecFlow;
+using Trivia.Domain.Players;
 
 namespace SpecflowTests.Steps
 {
 	[Binding]
     [Scope(Feature = "Answer")]
     public class AnswerSteps
-    {        
-        [When(@"'(.*)' donne la mauvaise réponse")]
-        public void WhenLeJoueurDonneLaMauvaiseReponse(string playerName)
+    {
+        [When(@"'(.*)' fait (.*) à son jet de dé")]
+        public void WhenLeJoueurFaitASonJetDeDe(string playerName, int diceScore)
         {
-            GameContext.Game.Answer(playerName, 7);
+            Player player = GameContext.Game.GetPlayerStatus(playerName).Player;
+            GameContext.RaisePlayerRolledDiceToAnswer(player, diceScore);
         }
-        
+
         [Then(@"'(.*)' marque un point")]
         public void ThenLeJoueurMarqueUnPoint(string playerName)
         {

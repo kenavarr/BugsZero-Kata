@@ -22,11 +22,5 @@ namespace SpecflowTests.Steps
         {
             GameContext.Game.SwitchToNextPlayer(playername);
         }
-
-        [When(@"'(.*)' donne la bonne réponse")]
-        public void WhenLeJoueurDonneLaBonneReponse(string playerName)
-        {
-            GameContext.Game.Answer(playerName, 1);
-        }
     }
 }

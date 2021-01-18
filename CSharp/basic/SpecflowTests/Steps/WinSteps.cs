@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using SpecflowTests.Contexts;
 using TechTalk.SpecFlow;
+using Trivia.Domain.Players;
 
 namespace SpecflowTests.Steps
 {
@@ -11,12 +12,21 @@ namespace SpecflowTests.Steps
         [Given(@"'(.*)' a (.*) points")]
         public void GivenLeJoueurAXPoints(string playerName, int score)
         {
+            Player player = GameContext.Game.GetPlayerStatus(playerName).Player;
+
             for(int i = 0; i < score; i++)
 			{
-                GameContext.Game.Answer(playerName, 1);
+                GameContext.RaisePlayerRolledDiceToAnswer(player, 1);
 			}
         }
-        
+
+        [When(@"'(.*)' gagne un nouveau point")]
+        public void WhenLeJoueurGagneUnNouveauPoint(string playerName)
+        {
+            Player player = GameContext.Game.GetPlayerStatus(playerName).Player;
+            GameContext.RaisePlayerAnsweredCorrectly(player);
+        }
+
         [Then(@"'(.*)' a gagné la partie")]
         public void ThenLeJoueurAGagneLaPartie(string playerName)
         {

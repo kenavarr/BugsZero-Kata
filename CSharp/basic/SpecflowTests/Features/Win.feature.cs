@@ -147,7 +147,7 @@ this.FeatureBackground();
  testRunner.And("\'Sue\' a 5 points", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
- testRunner.When("\'Sue\' donne la bonne réponse", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("\'Sue\' gagne un nouveau point", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
  testRunner.Then("\'Sue\' a gagné la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -194,7 +194,7 @@ this.FeatureBackground();
  testRunner.And("\'Sue\' a 0 points", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
- testRunner.When("\'Sue\' donne la bonne réponse", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("\'Sue\' gagne un nouveau point", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
  testRunner.Then("\'Sue\' n\'a pas gagné la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -241,7 +241,7 @@ this.FeatureBackground();
  testRunner.And("\'Sue\' a 1 points", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 28
- testRunner.When("\'Sue\' donne la bonne réponse", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("\'Sue\' gagne un nouveau point", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 29
  testRunner.Then("\'Sue\' n\'a pas gagné la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -288,7 +288,7 @@ this.FeatureBackground();
  testRunner.And("\'Sue\' a 2 points", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 34
- testRunner.When("\'Sue\' donne la bonne réponse", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("\'Sue\' gagne un nouveau point", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 35
  testRunner.Then("\'Sue\' n\'a pas gagné la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -335,7 +335,7 @@ this.FeatureBackground();
  testRunner.And("\'Sue\' a 3 points", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 40
- testRunner.When("\'Sue\' donne la bonne réponse", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("\'Sue\' gagne un nouveau point", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 41
  testRunner.Then("\'Sue\' n\'a pas gagné la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -382,7 +382,7 @@ this.FeatureBackground();
  testRunner.And("\'Sue\' a 4 points", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 46
- testRunner.When("\'Sue\' donne la bonne réponse", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("\'Sue\' gagne un nouveau point", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 47
  testRunner.Then("\'Sue\' n\'a pas gagné la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

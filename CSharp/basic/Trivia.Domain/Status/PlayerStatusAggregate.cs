@@ -1,5 +1,4 @@
-﻿using Trivia.Domain.Players;
-using Trivia.Domain.Players.Events;
+﻿using Trivia.Domain.Players.Events;
 using Trivia.Domain.Status.Events;
 
 namespace Trivia.Domain.Status

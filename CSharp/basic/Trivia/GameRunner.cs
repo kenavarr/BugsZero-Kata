@@ -30,7 +30,7 @@ namespace Trivia
                 string currentPlayerName = GetCurrentPlayer(players, currentPlayer);
                 aGame.SwitchToNextPlayer(currentPlayerName);
                 aGame.Roll(rand.Next(5) + 1);
-                aGame.Answer(currentPlayerName, rand.Next(9));
+                aGame.RollDiceToAnswer(currentPlayerName);
                 isWinner = aGame.PlayerWin(currentPlayerName);
 
             } while (!isWinner);
