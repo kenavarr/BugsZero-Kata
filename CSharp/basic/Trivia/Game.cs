@@ -20,8 +20,7 @@ namespace Trivia
 		LinkedList<string> sportsQuestions = new LinkedList<string>();
 		LinkedList<string> rockQuestions = new LinkedList<string>();
 
-		int currentPlayer = -1;
-		string currentPlayerName;
+		PlayerStatus currentPlayerStatus;
 
 		public Game()
 		{
@@ -56,105 +55,104 @@ namespace Trivia
 
 		public void Roll(int roll)
 		{
-			Console.WriteLine(playersStatus[currentPlayer].Player.Name + " is the current player");
+			Console.WriteLine(currentPlayerStatus.Player.Name + " is the current player");
 			Console.WriteLine("They have rolled a " + roll);
 
-			if (playersStatus[currentPlayer].IsPrisoner)
+			if (currentPlayerStatus.IsPrisoner)
 			{
 				if (roll % 2 != 0)
 				{
-					playersStatus[currentPlayer].Release();
+					currentPlayerStatus.Release();
 
-					Console.WriteLine(playersStatus[currentPlayer].Player.Name + " is getting out of the penalty box");
-					places[currentPlayer] = places[currentPlayer] + roll;
-					if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
+					Console.WriteLine(currentPlayerStatus.Player.Name + " is getting out of the penalty box");
+					//places[currentPlayer] = places[currentPlayer] + roll;
+					//if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 
-					Console.WriteLine(playersStatus[currentPlayer].Player.Name
-							+ "'s new location is "
-							+ places[currentPlayer]);
-					Console.WriteLine("The category is " + CurrentCategory());
-					AskQuestion();
+					//Console.WriteLine(currentPlayerStatus.Player.Name
+					//		+ "'s new location is "
+					//		+ places[currentPlayer]);
+					//Console.WriteLine("The category is " + CurrentCategory());
+					//AskQuestion();
 				}
 				else
 				{
-					Console.WriteLine(playersStatus[currentPlayer].Player.Name + " is not getting out of the penalty box");
+					Console.WriteLine(currentPlayerStatus.Player.Name + " is not getting out of the penalty box");
 				}
 
 			}
 			else
 			{
 
-				places[currentPlayer] = places[currentPlayer] + roll;
-				if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
+				//places[currentPlayer] = places[currentPlayer] + roll;
+				//if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
 
-				Console.WriteLine(playersStatus[currentPlayer].Player.Name
-						+ "'s new location is "
-						+ places[currentPlayer]);
-				Console.WriteLine("The category is " + CurrentCategory());
-				AskQuestion();
+				//Console.WriteLine(currentPlayerStatus.Player.Name
+				//		+ "'s new location is "
+				//		+ places[currentPlayer]);
+				//Console.WriteLine("The category is " + CurrentCategory());
+				//AskQuestion();
 			}
 
 		}
 
-		public void Answer(int diceScore)
+		public void Answer(string playerName, int diceScore)
 		{
-			playersStatus[currentPlayer].Player.Answer(diceScore);
+			if(currentPlayerStatus.Player.Name == playerName)
+				currentPlayerStatus.Player.Answer(diceScore);
 		}
 
 		public bool DidPlayerWin()
 		{
-			return !(purses[currentPlayer] == 6);
+			return !(currentPlayerStatus.Score == 6);
 		}
 
 		public PlayerStatus GetCurrentPlayerStatus()
 		{
-			return playersStatus.Single(ps => ps.Player.Name == currentPlayerName);
+			return currentPlayerStatus;
 		}
 
-		public void SwitchToNextPlayer()
+		public void SwitchToNextPlayer(string playerName)
 		{
-			currentPlayer++;
-			if (currentPlayer == playersStatus.Count) currentPlayer = 0;
-			currentPlayerName = playersStatus[currentPlayer].Player.Name;
+			currentPlayerStatus = playersStatus.Single(p => p.Player.Name == playerName);
 		}
 
-		private void AskQuestion()
-		{
-			if (CurrentCategory() == "Pop")
-			{
-				Console.WriteLine(popQuestions.First());
-				popQuestions.RemoveFirst();
-			}
-			if (CurrentCategory() == "Science")
-			{
-				Console.WriteLine(scienceQuestions.First());
-				scienceQuestions.RemoveFirst();
-			}
-			if (CurrentCategory() == "Sports")
-			{
-				Console.WriteLine(sportsQuestions.First());
-				sportsQuestions.RemoveFirst();
-			}
-			if (CurrentCategory() == "Rock")
-			{
-				Console.WriteLine(rockQuestions.First());
-				rockQuestions.RemoveFirst();
-			}
-		}
+		//private void AskQuestion()
+		//{
+		//	if (CurrentCategory() == "Pop")
+		//	{
+		//		Console.WriteLine(popQuestions.First());
+		//		popQuestions.RemoveFirst();
+		//	}
+		//	if (CurrentCategory() == "Science")
+		//	{
+		//		Console.WriteLine(scienceQuestions.First());
+		//		scienceQuestions.RemoveFirst();
+		//	}
+		//	if (CurrentCategory() == "Sports")
+		//	{
+		//		Console.WriteLine(sportsQuestions.First());
+		//		sportsQuestions.RemoveFirst();
+		//	}
+		//	if (CurrentCategory() == "Rock")
+		//	{
+		//		Console.WriteLine(rockQuestions.First());
+		//		rockQuestions.RemoveFirst();
+		//	}
+		//}
 
-		private String CurrentCategory()
-		{
-			if (places[currentPlayer] == 0) return "Pop";
-			if (places[currentPlayer] == 4) return "Pop";
-			if (places[currentPlayer] == 8) return "Pop";
-			if (places[currentPlayer] == 1) return "Science";
-			if (places[currentPlayer] == 5) return "Science";
-			if (places[currentPlayer] == 9) return "Science";
-			if (places[currentPlayer] == 2) return "Sports";
-			if (places[currentPlayer] == 6) return "Sports";
-			if (places[currentPlayer] == 10) return "Sports";
-			return "Rock";
-		}
+		//private String CurrentCategory()
+		//{
+		//	if (places[currentPlayer] == 0) return "Pop";
+		//	if (places[currentPlayer] == 4) return "Pop";
+		//	if (places[currentPlayer] == 8) return "Pop";
+		//	if (places[currentPlayer] == 1) return "Science";
+		//	if (places[currentPlayer] == 5) return "Science";
+		//	if (places[currentPlayer] == 9) return "Science";
+		//	if (places[currentPlayer] == 2) return "Sports";
+		//	if (places[currentPlayer] == 6) return "Sports";
+		//	if (places[currentPlayer] == 10) return "Sports";
+		//	return "Rock";
+		//}
 
 		private void OnPlayerTriggered(IPlayerEvent playerEvent)
 		{
@@ -177,11 +175,10 @@ namespace Trivia
 			{
 
 				Console.WriteLine("Answer was correct!!!!");
-				purses[currentPlayer]++;
 				playerStatus.IncreaseScore();
-				Console.WriteLine(playersStatus[currentPlayer].Player.Name
+				Console.WriteLine(currentPlayerStatus.Player.Name
 						+ " now has "
-						+ purses[currentPlayer]
+						+ currentPlayerStatus.Score
 						+ " Gold Coins.");
 			}
 		}
@@ -190,7 +187,7 @@ namespace Trivia
 		{
 			Console.WriteLine("Question was incorrectly answered");
 			playersStatus.Single(ps => ps.Player.Name == player.Name).Imprison();
-			Console.WriteLine(playersStatus[currentPlayer].Player.Name + " was sent to the penalty box");
+			Console.WriteLine(currentPlayerStatus.Player.Name + " was sent to the penalty box");
 		}
 
 		private void OnPlayerStatusTriggered(IPlayerStatusEvent playerStatusEvent)
@@ -229,6 +226,7 @@ namespace Trivia
 			var oldPlayerStatus = playersStatus.Single(ps => ps.Player.Name == newplayerStatus.Player.Name);
 			playersStatus.Remove(oldPlayerStatus);
 			playersStatus.Add(newplayerStatus);
+			currentPlayerStatus = newplayerStatus;
 		}
 
 		public void Dispose()

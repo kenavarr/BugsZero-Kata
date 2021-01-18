@@ -29,7 +29,8 @@
           "https://api.nuget.org/v3/index.json": {},
           "https://elcia.pkgs.visualstudio.com/Stargate/_packaging/Stargate/nuget/v3/index.json": {},
           "https://pkgs.dev.azure.com/elcia/_packaging/Cervelle/nuget/v3/index.json": {},
-          "https://pkgs.dev.azure.com/elcia/_packaging/ELCIA/nuget/v3/index.json": {}
+          "https://pkgs.dev.azure.com/elcia/_packaging/ELCIA/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/elcia/_packaging/MMs%40Release/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net48": {

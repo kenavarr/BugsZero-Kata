@@ -18,40 +18,40 @@ namespace SpecflowTests.Steps
             }
         }
 
-        [Given(@"Un joueur doit répondre à une question")]
-        public void GivenUnJoueurDoitRepondreAUneQuestion()
+        [Given(@"'(.*)' doit répondre à une question")]
+        public void GivenLeJoueurDoitRepondreAUneQuestion(string playername)
         {
-            GameContext.Game.SwitchToNextPlayer();
+            GameContext.Game.SwitchToNextPlayer(playername);
         }
 
-        [When(@"Le joueur donne la bonne réponse")]
-        public void WhenLeJoueurDonneLaBonneReponse()
+        [When(@"'(.*)' donne la bonne réponse")]
+        public void WhenLeJoueurDonneLaBonneReponse(string playerName)
         {
-            GameContext.Game.Answer(1);
+            GameContext.Game.Answer(playerName, 1);
         }
         
-        [When(@"Le joueur donne la mauvaise réponse")]
-        public void WhenLeJoueurDonneLaMauvaiseReponse()
+        [When(@"'(.*)' donne la mauvaise réponse")]
+        public void WhenLeJoueurDonneLaMauvaiseReponse(string playerName)
         {
-            GameContext.Game.Answer(7);
+            GameContext.Game.Answer(playerName, 7);
         }
         
-        [Then(@"Le joueur marque un point")]
-        public void ThenLeJoueurMarqueUnPoint()
+        [Then(@"'(.*)' marque un point")]
+        public void ThenLeJoueurMarqueUnPoint(string playername)
         {
             var currentPlayerSatus = GameContext.Game.GetCurrentPlayerStatus();
             currentPlayerSatus.Score.Should().Be(1);
         }
         
-        [Then(@"Le joueur ne marque pas de point")]
-        public void ThenLeJoueurNeMarquePasDePoint()
+        [Then(@"'(.*)' ne marque pas de point")]
+        public void ThenLeJoueurNeMarquePasDePoint(string playerName)
         {
             var currentPlayerSatus = GameContext.Game.GetCurrentPlayerStatus();
             currentPlayerSatus.Score.Should().Be(0);
         }
         
-        [Then(@"Le joueur va en prison")]
-        public void ThenLeJoueurVaEnPrison()
+        [Then(@"'(.*)' va en prison")]
+        public void ThenLeJoueurVaEnPrison(string playerName)
         {
             var currentPlayerSatus = GameContext.Game.GetCurrentPlayerStatus();
             currentPlayerSatus.IsPrisoner.Should().BeTrue();

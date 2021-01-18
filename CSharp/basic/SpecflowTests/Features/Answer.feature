@@ -9,14 +9,14 @@ Background:
 	| Chet |
 	| Pat  |
 	| Sue  |
-	And Un joueur doit répondre à une question
 
 Scenario: Un joueur donne la bonne réponse à une question
-	
-	When Le joueur donne la bonne réponse
-	Then Le joueur marque un point
+	Given 'Chet' doit répondre à une question
+	When 'Chet' donne la bonne réponse
+	Then 'Chet' marque un point
 
 Scenario: Un joueur donne la mauvaise réponse à une question
-	When Le joueur donne la mauvaise réponse
-	Then Le joueur ne marque pas de point
-	And Le joueur va en prison
+	Given 'Pat' doit répondre à une question
+	When 'Pat' donne la mauvaise réponse
+	Then 'Pat' ne marque pas de point
+	And 'Pat' va en prison

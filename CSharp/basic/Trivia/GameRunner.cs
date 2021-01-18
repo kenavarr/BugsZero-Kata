@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Trivia
 {
@@ -9,27 +10,40 @@ namespace Trivia
 
         public static void Main(String[] args)
         {
+            IList<string> players = new string[]
+            {
+                "Chet",
+                "Pat",
+                "Sue"
+            };
+
             Game aGame = new Game();
-
-            aGame.AddPlayer("Chet");
-            aGame.AddPlayer("Pat");
-            aGame.AddPlayer("Sue");
-
             Random rand = new Random();
+            int currentPlayer = -1;
+
+            foreach (string player in players)
+                aGame.AddPlayer(player);
 
             do
             {
-
-                aGame.SwitchToNextPlayer();
+                currentPlayer++;
+                string currentPlayerName = GetCurrentPlayer(players, currentPlayer);
+                aGame.SwitchToNextPlayer(currentPlayerName);
                 aGame.Roll(rand.Next(5) + 1);
-                aGame.Answer(rand.Next(9));
+                aGame.Answer(currentPlayerName, rand.Next(9));
                 notAWinner = aGame.DidPlayerWin();
 
             } while (notAWinner);
 
         }
 
+        private static string GetCurrentPlayer(IList<string> players, int currentPlayer)
+		{
+            if (currentPlayer == players.Count) 
+                currentPlayer = 0;
 
+            return players[currentPlayer];
+        }
     }
 
 }
