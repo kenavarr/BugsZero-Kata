@@ -6,7 +6,7 @@ namespace Trivia
     public class GameRunner
     {
 
-        private static bool notAWinner;
+        private static bool isWinner;
 
         public static void Main(String[] args)
         {
@@ -31,9 +31,9 @@ namespace Trivia
                 aGame.SwitchToNextPlayer(currentPlayerName);
                 aGame.Roll(rand.Next(5) + 1);
                 aGame.Answer(currentPlayerName, rand.Next(9));
-                notAWinner = aGame.DidPlayerWin();
+                isWinner = aGame.PlayerWin(currentPlayerName);
 
-            } while (notAWinner);
+            } while (!isWinner);
 
         }
 

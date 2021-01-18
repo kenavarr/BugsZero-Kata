@@ -101,14 +101,14 @@ namespace Trivia
 				currentPlayerStatus.Player.Answer(diceScore);
 		}
 
-		public bool DidPlayerWin()
+		public bool PlayerWin(string playerName)
 		{
-			return !(currentPlayerStatus.Score == 6);
+			return playersStatus.Single(p => p.Player.Name == playerName).Score == 6;
 		}
 
-		public PlayerStatus GetCurrentPlayerStatus()
+		public PlayerStatus GetPlayerStatus(string playerName)
 		{
-			return currentPlayerStatus;
+			return playersStatus.Single(p => p.Player.Name == playerName);
 		}
 
 		public void SwitchToNextPlayer(string playerName)
