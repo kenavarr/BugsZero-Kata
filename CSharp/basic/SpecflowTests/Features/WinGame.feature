@@ -1,4 +1,4 @@
-﻿Feature: Win
+﻿Feature: WinGame
 	En tant que joueur de Trivia
 	Je souhaite pouvoir gagner une partie 
 	Afin de montrer à mes amis que je suis le meilleur

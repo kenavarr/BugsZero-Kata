@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="Dices\Dice.cs" />
     <Compile Include="Players\Events\IPlayerEvent.cs" />
-    <Compile Include="Players\Events\PlayerAddedEvent.cs" />
+    <Compile Include="Players\Events\PlayerJoinedTheGameEvent.cs" />
     <Compile Include="Players\Events\PlayerAnswerdBadlyEvent.cs" />
     <Compile Include="Players\Events\PlayerAnswerdCorrectlyEvent.cs" />
     <Compile Include="Players\Events\PlayerRolledDiceToAnswerEvent.cs" />

@@ -6,8 +6,8 @@ using Trivia.Domain.Players;
 namespace SpecflowTests.Steps
 {
 	[Binding]
-    [Scope(Feature = "Win")]
-    public class WinSteps
+    [Scope(Feature = "WinGame")]
+    public class WinGameSteps
     {
         [Given(@"'(.*)' a (.*) points")]
         public void GivenLeJoueurAXPoints(string playerName, int score)

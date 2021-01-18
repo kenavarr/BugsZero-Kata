@@ -6,11 +6,11 @@ using Trivia.Domain.Players;
 namespace SpecflowTests.Steps
 {
 	[Binding]
-    [Scope(Feature = "Answer")]
-    public class AnswerSteps
+    [Scope(Feature = "RollDiceToAnswer")]
+    public class RoolDiceToAnswerSteps
     {
         [When(@"'(.*)' fait (.*) à son jet de dé")]
-        public void WhenLeJoueurFaitASonJetDeDe(string playerName, int diceScore)
+        public void WhenLeJoueurFaitXASonJetDeDe(string playerName, int diceScore)
         {
             Player player = GameContext.Game.GetPlayerStatus(playerName).Player;
             GameContext.RaisePlayerRolledDiceToAnswer(player, diceScore);

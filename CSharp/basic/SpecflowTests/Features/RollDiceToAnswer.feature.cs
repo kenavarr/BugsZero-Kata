@@ -20,7 +20,7 @@ namespace SpecflowTests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class AnswerFeature
+    public partial class RollDiceToAnswerFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -29,7 +29,7 @@ namespace SpecflowTests.Features
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Answer.feature"
+#line 1 "RollDiceToAnswer.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
@@ -48,7 +48,7 @@ namespace SpecflowTests.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Answer", "\tEn tant que joueur de Trivia\r\n\tJe souhaite pouvoir lancer un dé\r\n\tAfin de répond" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "RollDiceToAnswer", "\tEn tant que joueur de Trivia\r\n\tJe souhaite pouvoir lancer un dé\r\n\tAfin de répond" +
                     "re à une question\r\n\tEt de marquer un point", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -64,9 +64,9 @@ namespace SpecflowTests.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Answer")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "RollDiceToAnswer")))
             {
-                global::SpecflowTests.Features.AnswerFeature.FeatureSetup(null);
+                global::SpecflowTests.Features.RollDiceToAnswerFeature.FeatureSetup(null);
             }
         }
         
@@ -111,7 +111,7 @@ namespace SpecflowTests.Features
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la bonne réponse à une question en faisant 1 à son jet de dé")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Answer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RollDiceToAnswer")]
         public virtual void UnJoueurDonneLaBonneReponseAUneQuestionEnFaisant1ASonJetDeDe()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -155,7 +155,7 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la bonne réponse à une question en faisant 2 à son jet de dé")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Answer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RollDiceToAnswer")]
         public virtual void UnJoueurDonneLaBonneReponseAUneQuestionEnFaisant2ASonJetDeDe()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -199,7 +199,7 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la bonne réponse à une question en faisant 3 à son jet de dé")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Answer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RollDiceToAnswer")]
         public virtual void UnJoueurDonneLaBonneReponseAUneQuestionEnFaisant3ASonJetDeDe()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -243,7 +243,7 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la bonne réponse à une question en faisant 4 à son jet de dé")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Answer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RollDiceToAnswer")]
         public virtual void UnJoueurDonneLaBonneReponseAUneQuestionEnFaisant4ASonJetDeDe()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -287,7 +287,7 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la bonne réponse à une question en faisant 5 à son jet de dé")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Answer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RollDiceToAnswer")]
         public virtual void UnJoueurDonneLaBonneReponseAUneQuestionEnFaisant5ASonJetDeDe()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -331,7 +331,7 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la bonne réponse à une question en faisant 6 à son jet de dé")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Answer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RollDiceToAnswer")]
         public virtual void UnJoueurDonneLaBonneReponseAUneQuestionEnFaisant6ASonJetDeDe()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -374,13 +374,13 @@ this.FeatureBackground();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la mauvaise réponse à une question en faisant 7 à son jet de dé")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Answer")]
-        public virtual void UnJoueurDonneLaMauvaiseReponseAUneQuestionEnFaisant7ASonJetDeDe()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la bonne réponse à une question en faisant 8 à son jet de dé")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RollDiceToAnswer")]
+        public virtual void UnJoueurDonneLaBonneReponseAUneQuestionEnFaisant8ASonJetDeDe()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Un joueur donne la mauvaise réponse à une question en faisant 7 à son jet de dé", null, tagsOfScenario, argumentsOfScenario);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Un joueur donne la bonne réponse à une question en faisant 8 à son jet de dé", null, tagsOfScenario, argumentsOfScenario);
 #line 44
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -405,59 +405,12 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 45
- testRunner.Given("\'Pat\' doit répondre à une question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 46
- testRunner.When("\'Pat\' fait 7 à son jet de dé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 47
- testRunner.Then("\'Pat\' ne marque pas de point", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-#line 48
- testRunner.And("\'Pat\' va en prison", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la bonne réponse à une question en faisant 8 à son jet de dé")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Answer")]
-        public virtual void UnJoueurDonneLaBonneReponseAUneQuestionEnFaisant8ASonJetDeDe()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Un joueur donne la bonne réponse à une question en faisant 8 à son jet de dé", null, tagsOfScenario, argumentsOfScenario);
-#line 50
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 7
-this.FeatureBackground();
-#line hidden
-#line 51
  testRunner.Given("\'Chet\' doit répondre à une question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 52
+#line 46
  testRunner.When("\'Chet\' fait 8 à son jet de dé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 53
+#line 47
  testRunner.Then("\'Chet\' marque un point", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -466,13 +419,13 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la bonne réponse à une question en faisant 9 à son jet de dé")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Answer")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RollDiceToAnswer")]
         public virtual void UnJoueurDonneLaBonneReponseAUneQuestionEnFaisant9ASonJetDeDe()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Un joueur donne la bonne réponse à une question en faisant 9 à son jet de dé", null, tagsOfScenario, argumentsOfScenario);
-#line 55
+#line 49
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -495,14 +448,61 @@ this.ScenarioInitialize(scenarioInfo);
 #line 7
 this.FeatureBackground();
 #line hidden
-#line 56
+#line 50
  testRunner.Given("\'Chet\' doit répondre à une question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 57
+#line 51
  testRunner.When("\'Chet\' fait 9 à son jet de dé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 58
+#line 52
  testRunner.Then("\'Chet\' marque un point", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur donne la mauvaise réponse à une question en faisant 7 à son jet de dé")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RollDiceToAnswer")]
+        public virtual void UnJoueurDonneLaMauvaiseReponseAUneQuestionEnFaisant7ASonJetDeDe()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Un joueur donne la mauvaise réponse à une question en faisant 7 à son jet de dé", null, tagsOfScenario, argumentsOfScenario);
+#line 54
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 7
+this.FeatureBackground();
+#line hidden
+#line 55
+ testRunner.Given("\'Pat\' doit répondre à une question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 56
+ testRunner.When("\'Pat\' fait 7 à son jet de dé", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 57
+ testRunner.Then("\'Pat\' ne marque pas de point", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 58
+ testRunner.And("\'Pat\' va en prison", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

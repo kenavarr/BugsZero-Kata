@@ -1,10 +1,10 @@
 ﻿namespace Trivia.Domain.Players.Events
 {
-	public class PlayerAddedEvent : IPlayerEvent
+	public class PlayerJoinedTheGameEvent : IPlayerEvent
 	{
 		public Player Player { get; }
 
-		public PlayerAddedEvent(Player player)
+		public PlayerJoinedTheGameEvent(Player player)
 		{
 			Player = player;
 		}

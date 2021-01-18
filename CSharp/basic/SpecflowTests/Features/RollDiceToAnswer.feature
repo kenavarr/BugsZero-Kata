@@ -1,4 +1,4 @@
-﻿Feature: Answer
+﻿Feature: RollDiceToAnswer
 	En tant que joueur de Trivia
 	Je souhaite pouvoir lancer un dé
 	Afin de répondre à une question

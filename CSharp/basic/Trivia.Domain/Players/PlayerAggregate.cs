@@ -19,9 +19,9 @@ namespace Trivia.Domain.Players
 			PlayerEvents.OnPlayerTriggered -= OnPlayerTriggered;
 		}
 
-		public static void Create(string playerName)
+		public static void JoinTheGame(string playerName)
 		{
-			PlayerEvents.RaiseEvent(new PlayerAddedEvent(new Player(playerName)));
+			PlayerEvents.RaiseEvent(new PlayerJoinedTheGameEvent(new Player(playerName)));
 		}
 
 		public static void RollDiceToSwichPlace(this Player player)

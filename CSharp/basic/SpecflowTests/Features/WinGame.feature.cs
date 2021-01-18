@@ -20,7 +20,7 @@ namespace SpecflowTests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class WinFeature
+    public partial class WinGameFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -29,7 +29,7 @@ namespace SpecflowTests.Features
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Win.feature"
+#line 1 "WinGame.feature"
 #line hidden
         
         public virtual Microsoft.VisualStudio.TestTools.UnitTesting.TestContext TestContext
@@ -48,7 +48,7 @@ namespace SpecflowTests.Features
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Win", "\tEn tant que joueur de Trivia\r\n\tJe souhaite pouvoir gagner une partie \r\n\tAfin de " +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "WinGame", "\tEn tant que joueur de Trivia\r\n\tJe souhaite pouvoir gagner une partie \r\n\tAfin de " +
                     "montrer à mes amis que je suis le meilleur", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -64,9 +64,9 @@ namespace SpecflowTests.Features
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Win")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "WinGame")))
             {
-                global::SpecflowTests.Features.WinFeature.FeatureSetup(null);
+                global::SpecflowTests.Features.WinGameFeature.FeatureSetup(null);
             }
         }
         
@@ -111,7 +111,7 @@ namespace SpecflowTests.Features
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur gagne la partie quand il acquiert son 6ème point")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Win")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WinGame")]
         public virtual void UnJoueurGagneLaPartieQuandIlAcquiertSon6EmePoint()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -158,7 +158,7 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur ne gagne pas la partie quand il acquiert son 1er point")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Win")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WinGame")]
         public virtual void UnJoueurNeGagnePasLaPartieQuandIlAcquiertSon1ErPoint()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -205,7 +205,7 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur ne gagne pas la partie quand il acquiert son 2ème point")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Win")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WinGame")]
         public virtual void UnJoueurNeGagnePasLaPartieQuandIlAcquiertSon2EmePoint()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -252,7 +252,7 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur ne gagne pas la partie quand il acquiert son 3ème point")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Win")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WinGame")]
         public virtual void UnJoueurNeGagnePasLaPartieQuandIlAcquiertSon3EmePoint()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -299,7 +299,7 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur ne gagne pas la partie quand il acquiert son 4ème point")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Win")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WinGame")]
         public virtual void UnJoueurNeGagnePasLaPartieQuandIlAcquiertSon4EmePoint()
         {
             string[] tagsOfScenario = ((string[])(null));
@@ -346,7 +346,7 @@ this.FeatureBackground();
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Un joueur ne gagne pas la partie quand il acquiert son 5ème point")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Win")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "WinGame")]
         public virtual void UnJoueurNeGagnePasLaPartieQuandIlAcquiertSon5EmePoint()
         {
             string[] tagsOfScenario = ((string[])(null));

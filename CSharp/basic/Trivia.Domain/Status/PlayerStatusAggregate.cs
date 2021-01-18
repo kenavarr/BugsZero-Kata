@@ -34,8 +34,8 @@ namespace Trivia.Domain.Status
 		{
 			switch (playerEvent)
 			{
-				case PlayerAddedEvent playerAdded:
-					PlayerStatusEvents.RaiseEvent(new PlayerStatusCreatedEvent(new PlayerStatus(playerAdded.Player, 0, false)));
+				case PlayerJoinedTheGameEvent playerJoinedTheGame:
+					PlayerStatusEvents.RaiseEvent(new PlayerStatusCreatedEvent(new PlayerStatus(playerJoinedTheGame.Player, 0, false)));
 					return;
 			}
 		}

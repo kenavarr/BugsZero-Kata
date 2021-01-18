@@ -51,7 +51,7 @@ namespace Trivia
 
 		public void AddPlayer(String playerName)
 		{
-			PlayerAggregate.Create(playerName);
+			PlayerAggregate.JoinTheGame(playerName);
 		}
 
 		public void Roll(int roll)
