@@ -2,13 +2,13 @@
 
 namespace Trivia.Domain.Dices
 {
-	internal class Dice
+	public class Dice
 	{
 		private int _maxNumber { get; }
 
 		private Random _rand = new Random();
 
-		internal Dice(int maxNumber)
+		public Dice(int maxNumber)
 		{
 			_maxNumber = maxNumber;
 		}

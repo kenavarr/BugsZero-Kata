@@ -31,7 +31,7 @@ namespace Trivia
                 currentPlayer++;
                 aGame.SwichToNextPlayer(GetCurrentPlayer(players, currentPlayer));
                 aGame.Roll(rand.Next(5) + 1);
-                aGame.Answer(rand.Next(9));
+                aGame.RollDiceToAnswer();
                 notAWinner = aGame.DidPlayerWin();
             } while (notAWinner);
 
