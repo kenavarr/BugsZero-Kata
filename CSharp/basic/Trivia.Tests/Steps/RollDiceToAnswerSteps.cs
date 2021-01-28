@@ -1,12 +1,15 @@
 ﻿using FluentAssertions;
+using System;
 using System.Linq;
 using TechTalk.SpecFlow;
+using Trivia.Domain.Dices.Events;
 using Trivia.Tests.Contexts;
 
 namespace Trivia.Tests.Steps
 {
-	[Binding]
-    public class AnswerSteps
+    [Binding]
+    [Scope(Feature = "RollDiceToAnswer")]
+    public class RollDiceToAnswerSteps
     {
         [Given(@"Les joueurs de Trivia")]
         public void GivenLesJoueursDeTrivia(Table players)
@@ -17,43 +20,40 @@ namespace Trivia.Tests.Steps
                 GameContext.Game.Add(playerName);
             }
         }
-        
-        [Given(@"Un joueur doit répondre à une question")]
-        public void GivenUnJoueurDoitRepondreAUneQuestion()
-        {
-            GameContext.Game.SwichToNextPlayer();
-        }
-        
-        [When(@"Le joueur donne la bonne réponse")]
-        public void WhenLeJoueurDonneLaBonneReponse()
-        {
-            GameContext.Game.Answer(1);
-        }
-        
-        [When(@"Le joueur donne la mauvaise réponse")]
-        public void WhenLeJoueurDonneLaMauvaiseReponse()
-        {
-            GameContext.Game.Answer(7);
-        }
 
-        [Then(@"Le joueur marque un point")]
-        public void ThenLeJoueurMarqueUnPoint()
+        [Given(@"'(.*)' doit répondre à une question")]
+        public void GivenDoitRepondreAUneQuestion(string player)
+        {
+            GameContext.Game.SwichToNextPlayer(player);
+        }
+        
+        [When(@"'(.*)' fait (.*) à son jet de dé")]
+        public void WhenFaitASonJetDeDe(string player, int score)
+        {
+            DiceEvents.RaiseEvent(new DiceRolledEvent(score));
+        }
+        
+        [Then(@"'(.*)' marque un point")]
+        public void ThenMarqueUnPoint(string player)
         {
             var playerContext = GameContext.Game.GetCurrentPlayerContext();
+            playerContext.Player.Name.Should().Be(player);
             playerContext.Score.Should().Be(1);
         }
         
-        [Then(@"Le joueur ne marque pas de point")]
-        public void ThenLeJoueurNeMarquePasDePoint()
+        [Then(@"'(.*)' ne marque pas de point")]
+        public void ThenNeMarquePasDePoint(string player)
         {
             var playerContext = GameContext.Game.GetCurrentPlayerContext();
+            playerContext.Player.Name.Should().Be(player);
             playerContext.Score.Should().Be(0);
         }
         
-        [Then(@"Le joueur va en prison")]
-        public void ThenLeJoueurVaEnPrison()
+        [Then(@"'(.*)' va en prison")]
+        public void ThenVaEnPrison(string player)
         {
             var playerContext = GameContext.Game.GetCurrentPlayerContext();
+            playerContext.Player.Name.Should().Be(player);
             playerContext.IsPrisoner.Should().BeTrue();
         }
     }

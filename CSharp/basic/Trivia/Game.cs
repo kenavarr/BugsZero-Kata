@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Trivia.Domain.Dices.Events;
 using Trivia.Domain.PlayerContexts;
 using Trivia.Domain.PlayerContexts.Events;
 using Trivia.Domain.Players;
@@ -25,6 +26,7 @@ namespace Trivia
         {
             PlayerEvents.OnPlayerTriggered += OnPlayerTriggered;
             PlayerContextEvents.OnPlayerContextTriggered += OnPlayerContextTriggered;
+            DiceEvents.OnDiceTriggered += OnDiceTriggered;
 
             for (int i = 0; i < 50; i++)
             {
@@ -149,11 +151,10 @@ namespace Trivia
             players[currentPlayer].Player.Answer(diceScore);
         }
 
-        public void SwichToNextPlayer()
+        public void SwichToNextPlayer(string playerName)
 		{
-            currentPlayer++;
-            if (currentPlayer == players.Count) 
-                currentPlayer = 0;
+            var newCurrentPlayer = players.Single(p => p.Player.Name == playerName);
+            currentPlayer = players.IndexOf(newCurrentPlayer);
         }
 
         public PlayerContext GetCurrentPlayerContext()
@@ -198,10 +199,21 @@ namespace Trivia
             }
         }
 
+        private void OnDiceTriggered(IDiceEvent diceEvent)
+        {
+            switch (diceEvent)
+            {
+                case DiceRolledEvent _:
+                    players[currentPlayer].Player.Answer(diceEvent.Score);
+                    return;
+            }
+        }
+
         public void Dispose()
         {
             PlayerEvents.OnPlayerTriggered -= OnPlayerTriggered;
             PlayerContextEvents.OnPlayerContextTriggered -= OnPlayerContextTriggered;
+            DiceEvents.OnDiceTriggered -= OnDiceTriggered;
         }
     }
 

@@ -1,4 +1,5 @@
-﻿using Trivia.Domain.Players.Events;
+﻿using Trivia.Domain.Dices;
+using Trivia.Domain.Players.Events;
 
 namespace Trivia.Domain.Players
 {
@@ -13,10 +14,10 @@ namespace Trivia.Domain.Players
 
 		public void Answer(int diceScore)
 		{
-			if (diceScore != 7)
-				PlayerEvents.RaiseEvent(new PlayerAnswerdCorrectlyEvent(this));
-			else
+			if (diceScore == 7)
 				PlayerEvents.RaiseEvent(new PlayerAnswerdBadlyEvent(this));
+			else
+				PlayerEvents.RaiseEvent(new PlayerAnswerdCorrectlyEvent(this));
 		}
 	}
 }
