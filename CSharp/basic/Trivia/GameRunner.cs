@@ -24,25 +24,26 @@ namespace Trivia
             foreach (string player in players)
                 aGame.Add(player);
 
-            Random rand = new Random();
-
             do
             {
-                currentPlayer++;
-                aGame.SwichToNextPlayer(GetCurrentPlayer(players, currentPlayer));
-                aGame.Roll(rand.Next(5) + 1);
-                aGame.RollDiceToAnswer();
+                currentPlayer = GetCurrentPlayer(players, currentPlayer + 1);
+                aGame.SwichToNextPlayer(players[currentPlayer]);
+                aGame.RollDiceToSwichPosition();
+
+                if (!aGame.GetCurrentPlayerContext().IsPrisoner)
+                    aGame.RollDiceToAnswer();
+
                 notAWinner = aGame.DidPlayerWin();
             } while (notAWinner);
 
         }
 
-        private static string GetCurrentPlayer(IList<string> players, int currentPlayer)
+        private static int GetCurrentPlayer(IList<string> players, int nextPlayer)
         {
-            if (currentPlayer == players.Count)
-                currentPlayer = 0;
+            if (nextPlayer == players.Count)
+                nextPlayer = 0;
 
-            return players[currentPlayer];
+            return nextPlayer;
         }
     }
 

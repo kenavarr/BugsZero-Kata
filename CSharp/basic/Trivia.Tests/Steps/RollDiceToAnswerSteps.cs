@@ -11,22 +11,6 @@ namespace Trivia.Tests.Steps
     [Scope(Feature = "RollDiceToAnswer")]
     public class RollDiceToAnswerSteps
     {
-        [Given(@"Les joueurs de Trivia")]
-        public void GivenLesJoueursDeTrivia(Table players)
-        {
-            var playersName = players.Rows.Select(i => i["Nom"].ToString());
-            foreach (string playerName in playersName)
-            {
-                GameContext.Game.Add(playerName);
-            }
-        }
-
-        [Given(@"'(.*)' doit répondre à une question")]
-        public void GivenDoitRepondreAUneQuestion(string player)
-        {
-            GameContext.Game.SwichToNextPlayer(player);
-        }
-        
         [When(@"'(.*)' fait (.*) à son jet de dé")]
         public void WhenFaitASonJetDeDe(string player, int score)
         {

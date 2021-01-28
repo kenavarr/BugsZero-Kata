@@ -11,31 +11,50 @@ namespace Trivia.Domain.PlayerContexts
 
 		public bool IsPrisoner { get; }
 
+		public int Position { get; }
+
 		public PlayerContext(Player player)
-			: this(player, 0, false)
+			: this(player, 0, false, 0)
 		{
 		}
 
-		private PlayerContext(Player player, uint score, bool isPrisoner)
+		public PlayerContext(Player player, uint score, bool isPrisoner, int position)
 		{
 			Player = player;
 			Score = score;
 			IsPrisoner = isPrisoner;
+			Position = position;
 		}
 
 		public void Imprison()
 		{
-			PlayerContextEvents.RaiseEvent(new PlayerContextImprisonedEvent(new PlayerContext(Player, Score, true)));
-		}
-
-		public void Release()
-		{
-			PlayerContextEvents.RaiseEvent(new PlayerContextReleasedEvent(new PlayerContext(Player, Score, false)));
+			PlayerContextEvents.RaiseEvent(new PlayerContextImprisonedEvent(new PlayerContext(Player, Score, true, Position)));
 		}
 
 		public void IncreaseScore()
 		{
-			PlayerContextEvents.RaiseEvent(new PlayerContextScoreIncreasedEvent(new PlayerContext(Player, Score + 1, IsPrisoner)));
+			PlayerContextEvents.RaiseEvent(new PlayerContextScoreIncreasedEvent(new PlayerContext(Player, Score + 1, IsPrisoner, Position)));
+		}
+
+		public void SwichPosition(int diceScore)
+		{
+			if (IsPrisoner && diceScore % 2 == 0)
+			{
+				PlayerContextEvents.RaiseEvent(new PlayerContextUnswichedPositionEvent());
+				return;
+			}
+
+			PlayerContextEvents.RaiseEvent(new PlayerContextSwichedPositionEvent(new PlayerContext(Player, Score, false, CalculPosition(diceScore))));
+		}
+
+		private int CalculPosition(int diceScore)
+		{
+			int newPosition = Position + diceScore;
+
+			if (newPosition > 11)
+				return newPosition - 12;
+
+			return newPosition;
 		}
 	}
 }

@@ -1,10 +1,10 @@
 ﻿namespace Trivia.Domain.PlayerContexts.Events
 {
-	public class PlayerContextReleasedEvent : IPlayerContextEvent
+	public class PlayerContextSwichedPositionEvent : IPlayerContextEvent
 	{
 		public PlayerContext PlayerContext { get; }
 
-		public PlayerContextReleasedEvent(PlayerContext playerContext)
+		public PlayerContextSwichedPositionEvent(PlayerContext playerContext)
 		{
 			PlayerContext = playerContext;
 		}

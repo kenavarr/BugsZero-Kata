@@ -43,15 +43,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dices\DiceToAnswer.cs" />
+    <Compile Include="Dices\DiceToSwichPosition.cs" />
     <Compile Include="Dices\Events\DiceEvents.cs" />
+    <Compile Include="Dices\Events\DiceRolledToSwichPositionEvent.cs" />
     <Compile Include="Dices\Events\DiceRolledToAnswerEvent.cs" />
     <Compile Include="Dices\Events\IDiceEvent.cs" />
     <Compile Include="Dices\IDice.cs" />
     <Compile Include="PlayerContexts\Events\IPlayerContextEvent.cs" />
     <Compile Include="PlayerContexts\Events\PlayerContextEvents.cs" />
-    <Compile Include="PlayerContexts\Events\PlayerContextReleasedEvent.cs" />
+    <Compile Include="PlayerContexts\Events\PlayerContextSwichedPositionEvent.cs" />
     <Compile Include="PlayerContexts\Events\PlayerContextScoreIncreasedEvent.cs" />
     <Compile Include="PlayerContexts\Events\PlayerContextImprisonedEvent.cs" />
+    <Compile Include="PlayerContexts\Events\PlayerContextUnswichedPositionEvent.cs" />
     <Compile Include="PlayerContexts\PlayerContext.cs" />
     <Compile Include="Players\Events\IPlayerEvent.cs" />
     <Compile Include="Players\Events\PlayerAnswerdBadlyEvent.cs" />

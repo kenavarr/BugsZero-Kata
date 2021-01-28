@@ -14,8 +14,7 @@ namespace Trivia
     {
         List<PlayerContext> _players = new List<PlayerContext>();
         DiceToAnswer _diceToAnswer = new DiceToAnswer(9);
-
-        int[] places = new int[6];
+        DiceToSwichPosition _diceToSwichPosition = new DiceToSwichPosition(5, 1);
 
         LinkedList<string> popQuestions = new LinkedList<string>();
         LinkedList<string> scienceQuestions = new LinkedList<string>();
@@ -53,11 +52,16 @@ namespace Trivia
         {
             var newPlayer = new Player(playerName);
             _players.Add(new PlayerContext(newPlayer));
-            places[HowManyPlayers()] = 0;
 
             Console.WriteLine(playerName + " was Added");
             Console.WriteLine("They are player number " + _players.Count);
             return true;
+        }
+
+        public void SwichToNextPlayer(string playerName)
+        {
+            var newCurrentPlayer = _players.Single(p => p.Player.Name == playerName);
+            currentPlayer = _players.IndexOf(newCurrentPlayer);
         }
 
         public int HowManyPlayers()
@@ -65,44 +69,15 @@ namespace Trivia
             return _players.Count;
         }
 
-        public void Roll(int roll)
+        public void RollDiceToSwichPosition()
         {
             Console.WriteLine(_players[currentPlayer] + " is the current player");
-            Console.WriteLine("They have rolled a " + roll);
+            _players[currentPlayer].Player.RollDice(_diceToSwichPosition);
+        }
 
-            if (_players[currentPlayer].IsPrisoner)
-            {
-                if (roll % 2 != 0)
-                {
-                    _players[currentPlayer].Release();
-                    places[currentPlayer] = places[currentPlayer] + roll;
-                    if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
-
-                    Console.WriteLine(_players[currentPlayer]
-                            + "'s new location is "
-                            + places[currentPlayer]);
-                    Console.WriteLine("The category is " + CurrentCategory());
-                    AskQuestion();
-                }
-                else
-                {
-                    Console.WriteLine(_players[currentPlayer] + " is not getting out of the penalty box");
-                }
-
-            }
-            else
-            {
-
-                places[currentPlayer] = places[currentPlayer] + roll;
-                if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
-
-                Console.WriteLine(_players[currentPlayer]
-                        + "'s new location is "
-                        + places[currentPlayer]);
-                Console.WriteLine("The category is " + CurrentCategory());
-                AskQuestion();
-            }
-
+        public void RollDiceToAnswer()
+        {
+            _players[currentPlayer].Player.RollDice(_diceToAnswer);
         }
 
         private void AskQuestion()
@@ -131,32 +106,21 @@ namespace Trivia
 
         private String CurrentCategory()
         {
-            if (places[currentPlayer] == 0) return "Pop";
-            if (places[currentPlayer] == 4) return "Pop";
-            if (places[currentPlayer] == 8) return "Pop";
-            if (places[currentPlayer] == 1) return "Science";
-            if (places[currentPlayer] == 5) return "Science";
-            if (places[currentPlayer] == 9) return "Science";
-            if (places[currentPlayer] == 2) return "Sports";
-            if (places[currentPlayer] == 6) return "Sports";
-            if (places[currentPlayer] == 10) return "Sports";
+            if (_players[currentPlayer].Position == 0) return "Pop";
+            if (_players[currentPlayer].Position == 4) return "Pop";
+            if (_players[currentPlayer].Position == 8) return "Pop";
+            if (_players[currentPlayer].Position == 1) return "Science";
+            if (_players[currentPlayer].Position == 5) return "Science";
+            if (_players[currentPlayer].Position == 9) return "Science";
+            if (_players[currentPlayer].Position == 2) return "Sports";
+            if (_players[currentPlayer].Position == 6) return "Sports";
+            if (_players[currentPlayer].Position == 10) return "Sports";
             return "Rock";
         }
 
         public bool DidPlayerWin()
         {
             return !(_players[currentPlayer].Score == 6);
-        }
-
-        public void RollDiceToAnswer() 
-        {
-            _players[currentPlayer].Player.RollDice(_diceToAnswer);
-        }
-
-        public void SwichToNextPlayer(string playerName)
-		{
-            var newCurrentPlayer = _players.Single(p => p.Player.Name == playerName);
-            currentPlayer = _players.IndexOf(newCurrentPlayer);
         }
 
         public PlayerContext GetCurrentPlayerContext()
@@ -183,20 +147,27 @@ namespace Trivia
         {
 			switch (playerContextEvent)
 			{
-                case PlayerContextImprisonedEvent _:
-                    _players[currentPlayer] = playerContextEvent.PlayerContext;
+                case PlayerContextImprisonedEvent playerContextImprisoned:
+                    _players[currentPlayer] = playerContextImprisoned.PlayerContext;
                     Console.WriteLine(_players[currentPlayer].Player.Name + " was sent to the penalty box");
                     return;
-                case PlayerContextScoreIncreasedEvent _:
-                    _players[currentPlayer] = playerContextEvent.PlayerContext;
+                case PlayerContextScoreIncreasedEvent playerContextScoreIncreased:
+                    _players[currentPlayer] = playerContextScoreIncreased.PlayerContext;
                     Console.WriteLine(_players[currentPlayer].Player.Name
                         + " now has "
                         + _players[currentPlayer].Score
                         + " Gold Coins.");
                     return;
-                case PlayerContextReleasedEvent _:
-                    _players[currentPlayer] = playerContextEvent.PlayerContext;
-                    Console.WriteLine(_players[currentPlayer] + " is getting out of the penalty box");
+                case PlayerContextUnswichedPositionEvent _:
+                    Console.WriteLine(_players[currentPlayer] + " is not getting out of the penalty box");
+                    return;
+                case PlayerContextSwichedPositionEvent playerContextSwichedPosition:
+                    _players[currentPlayer] = playerContextSwichedPosition.PlayerContext;
+                    Console.WriteLine(_players[currentPlayer]
+                            + "'s new location is "
+                            + _players[currentPlayer].Position);
+                    Console.WriteLine("The category is " + CurrentCategory());
+                    AskQuestion();
                     return;
             }
         }
@@ -207,6 +178,10 @@ namespace Trivia
             {
                 case DiceRolledToAnswerEvent _:
                     _players[currentPlayer].Player.Answer(diceEvent.Score);
+                    return;
+                case DiceRolledToSwichPositionEvent _:
+                    Console.WriteLine("They have rolled a " + diceEvent.Score);
+                    _players[currentPlayer].SwichPosition(diceEvent.Score);
                     return;
             }
         }
