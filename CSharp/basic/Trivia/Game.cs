@@ -14,8 +14,6 @@ namespace Trivia
 
         int[] places = new int[6];
 
-        bool[] inPenaltyBox = new bool[6];
-
         LinkedList<string> popQuestions = new LinkedList<string>();
         LinkedList<string> scienceQuestions = new LinkedList<string>();
         LinkedList<string> sportsQuestions = new LinkedList<string>();
@@ -52,7 +50,6 @@ namespace Trivia
             var newPlayer = new Player(playerName);
             players.Add(new PlayerContext(newPlayer));
             places[HowManyPlayers()] = 0;
-            inPenaltyBox[HowManyPlayers()] = false;
 
             Console.WriteLine(playerName + " was Added");
             Console.WriteLine("They are player number " + players.Count);
@@ -69,7 +66,7 @@ namespace Trivia
             Console.WriteLine(players[currentPlayer] + " is the current player");
             Console.WriteLine("They have rolled a " + roll);
 
-            if (inPenaltyBox[currentPlayer])
+            if (players[currentPlayer].IsPrisoner)
             {
                 if (roll % 2 != 0)
                 {
