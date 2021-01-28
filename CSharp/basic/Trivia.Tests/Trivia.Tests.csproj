@@ -27,9 +27,11 @@
 
   <ItemGroup>
     <Folder Include="Drivers\" />
-    <Folder Include="Features\" />
-    <Folder Include="Hooks\" />
-    <Folder Include="Steps\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Trivia.Domain\Trivia.Domain.csproj" />
+    <ProjectReference Include="..\Trivia\Trivia.csproj" />
   </ItemGroup>
 
 </Project>

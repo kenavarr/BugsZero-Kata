@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Trivia.Domain</RootNamespace>
     <AssemblyName>Trivia.Domain</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,7 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlayerContexts\Events\IPlayerContextEvent.cs" />
+    <Compile Include="PlayerContexts\Events\PlayerContextEvents.cs" />
+    <Compile Include="PlayerContexts\Events\PlayerContextReleasedEvent.cs" />
+    <Compile Include="PlayerContexts\Events\PlayerContextScoreIncreasedEvent.cs" />
+    <Compile Include="PlayerContexts\Events\PlayerContextImprisonedEvent.cs" />
+    <Compile Include="PlayerContexts\PlayerContext.cs" />
+    <Compile Include="Players\Events\IPlayerEvent.cs" />
+    <Compile Include="Players\Events\PlayerAnswerdBadlyEvent.cs" />
+    <Compile Include="Players\Events\PlayerAnswerdCorrectlyEvent.cs" />
+    <Compile Include="Players\Events\PlayerEvents.cs" />
+    <Compile Include="Players\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
