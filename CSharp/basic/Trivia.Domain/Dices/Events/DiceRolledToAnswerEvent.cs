@@ -1,10 +1,10 @@
 ﻿namespace Trivia.Domain.Dices.Events
 {
-	public class DiceRolledEvent : IDiceEvent
+	public class DiceRolledToAnswerEvent : IDiceEvent
 	{
 		public int Score { get; }
 
-		public DiceRolledEvent(int score)
+		public DiceRolledToAnswerEvent(int score)
 		{
 			Score = score;
 		}

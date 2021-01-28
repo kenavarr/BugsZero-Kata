@@ -12,7 +12,7 @@ namespace Trivia.Domain.Players
 			Name = playerName;
 		}
 
-		public void RollDice(Dice dice)
+		public void RollDice(IDice dice)
 		{
 			dice.GetRollingScore();
 		}

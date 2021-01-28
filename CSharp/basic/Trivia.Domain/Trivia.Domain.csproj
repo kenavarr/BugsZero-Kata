@@ -42,10 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dices\Dice.cs" />
+    <Compile Include="Dices\DiceToAnswer.cs" />
     <Compile Include="Dices\Events\DiceEvents.cs" />
-    <Compile Include="Dices\Events\DiceRolledEvent.cs" />
+    <Compile Include="Dices\Events\DiceRolledToAnswerEvent.cs" />
     <Compile Include="Dices\Events\IDiceEvent.cs" />
+    <Compile Include="Dices\IDice.cs" />
     <Compile Include="PlayerContexts\Events\IPlayerContextEvent.cs" />
     <Compile Include="PlayerContexts\Events\PlayerContextEvents.cs" />
     <Compile Include="PlayerContexts\Events\PlayerContextReleasedEvent.cs" />

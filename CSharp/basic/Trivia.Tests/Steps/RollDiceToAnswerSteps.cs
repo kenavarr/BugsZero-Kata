@@ -30,7 +30,7 @@ namespace Trivia.Tests.Steps
         [When(@"'(.*)' fait (.*) à son jet de dé")]
         public void WhenFaitASonJetDeDe(string player, int score)
         {
-            DiceEvents.RaiseEvent(new DiceRolledEvent(score));
+            DiceEvents.RaiseEvent(new DiceRolledToAnswerEvent(score));
         }
         
         [Then(@"'(.*)' marque un point")]

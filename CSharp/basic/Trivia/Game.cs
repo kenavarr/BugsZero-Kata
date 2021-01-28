@@ -13,7 +13,7 @@ namespace Trivia
     public class Game : IDisposable
     {
         List<PlayerContext> _players = new List<PlayerContext>();
-        Dice _diceToAnswer = new Dice(9);
+        DiceToAnswer _diceToAnswer = new DiceToAnswer(9);
 
         int[] places = new int[6];
 
@@ -205,7 +205,7 @@ namespace Trivia
         {
             switch (diceEvent)
             {
-                case DiceRolledEvent _:
+                case DiceRolledToAnswerEvent _:
                     _players[currentPlayer].Player.Answer(diceEvent.Score);
                     return;
             }
